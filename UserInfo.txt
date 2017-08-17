@@ -1,10 +1,10 @@
-***** 1 *****
-1	
-`Nguyen Duc Huy	TOAA
+***** 2 *****
+
+tran dai nghiep	infinity
+1-1-2000
+1652418	turbot151@gmail.com
+***** 3 *****
+
+Huy Duc Nguyen	TOAA
 1-1-2000
 1652240	ndhuylord@gmail.com
-***** 2 *****
-6	7	8	2	3	
-tran daij nghiep	infinity
-1-1-2000
-134214	dfafjdsfjslfj
