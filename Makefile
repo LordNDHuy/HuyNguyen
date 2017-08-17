@@ -53,12 +53,16 @@ OBJECTS_DIR   = ./
 SOURCES       = ../New_A_2_Gui/main.cpp \
 		../New_A_2_Gui/account_management.cpp \
 		../New_A_2_Gui/src/UsrInfo.cpp \
-		../New_A_2_Gui/src/Account.cpp moc_account_management.cpp
+		../New_A_2_Gui/src/Account.cpp \
+		../New_A_2_Gui/login.cpp moc_account_management.cpp \
+		moc_login.cpp
 OBJECTS       = main.o \
 		account_management.o \
 		UsrInfo.o \
 		Account.o \
-		moc_account_management.o
+		login.o \
+		moc_account_management.o \
+		moc_login.o
 DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/common/unix.conf \
 		/usr/lib/qt/mkspecs/common/linux.conf \
@@ -177,10 +181,12 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/features/lex.prf \
 		../New_A_2_Gui/New_A_2_Gui.pro ../New_A_2_Gui/account_management.h \
 		../New_A_2_Gui/include/Account.h \
-		../New_A_2_Gui/include/UsrInfo.h ../New_A_2_Gui/main.cpp \
+		../New_A_2_Gui/include/UsrInfo.h \
+		../New_A_2_Gui/login.h ../New_A_2_Gui/main.cpp \
 		../New_A_2_Gui/account_management.cpp \
 		../New_A_2_Gui/src/UsrInfo.cpp \
-		../New_A_2_Gui/src/Account.cpp
+		../New_A_2_Gui/src/Account.cpp \
+		../New_A_2_Gui/login.cpp
 QMAKE_TARGET  = New_A_2_Gui
 DESTDIR       = 
 TARGET        = New_A_2_Gui
@@ -189,7 +195,7 @@ TARGET        = New_A_2_Gui
 first: all
 ####### Build rules
 
-$(TARGET): ui_account_management.h $(OBJECTS)  
+$(TARGET): ui_account_management.h ui_login.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../New_A_2_Gui/New_A_2_Gui.pro /usr/lib/qt/mkspecs/linux-g++/qmake.conf /usr/lib/qt/mkspecs/features/spec_pre.prf \
@@ -448,9 +454,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/qt/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../New_A_2_Gui/account_management.h ../New_A_2_Gui/include/Account.h ../New_A_2_Gui/include/UsrInfo.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../New_A_2_Gui/main.cpp ../New_A_2_Gui/account_management.cpp ../New_A_2_Gui/src/UsrInfo.cpp ../New_A_2_Gui/src/Account.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../New_A_2_Gui/account_management.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../New_A_2_Gui/account_management.h ../New_A_2_Gui/include/Account.h ../New_A_2_Gui/include/UsrInfo.h ../New_A_2_Gui/login.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../New_A_2_Gui/main.cpp ../New_A_2_Gui/account_management.cpp ../New_A_2_Gui/src/UsrInfo.cpp ../New_A_2_Gui/src/Account.cpp ../New_A_2_Gui/login.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../New_A_2_Gui/account_management.ui ../New_A_2_Gui/login.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -482,22 +488,33 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/qt/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -Wall -W -dM -E -o moc_predefs.h /usr/lib/qt/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_account_management.cpp
+compiler_moc_header_make_all: moc_account_management.cpp moc_login.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_account_management.cpp
-moc_account_management.cpp: ../New_A_2_Gui/account_management.h \
+	-$(DEL_FILE) moc_account_management.cpp moc_login.cpp
+moc_account_management.cpp: ../New_A_2_Gui/include/Account.h \
+		../New_A_2_Gui/include/UsrInfo.h \
+		../New_A_2_Gui/account_management.h \
 		moc_predefs.h \
 		/usr/bin/moc
 	/usr/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/huynguyen/cpp/New_A_2_Gui -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I. -I/usr/include/c++/7.1.1 -I/usr/include/c++/7.1.1/x86_64-pc-linux-gnu -I/usr/include/c++/7.1.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include-fixed -I/usr/include ../New_A_2_Gui/account_management.h -o moc_account_management.cpp
 
+moc_login.cpp: ../New_A_2_Gui/login.h \
+		moc_predefs.h \
+		/usr/bin/moc
+	/usr/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/qt/mkspecs/linux-g++ -I/home/huynguyen/cpp/New_A_2_Gui -I/usr/include/qt -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtCore -I. -I/usr/include/c++/7.1.1 -I/usr/include/c++/7.1.1/x86_64-pc-linux-gnu -I/usr/include/c++/7.1.1/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include -I/usr/local/include -I/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include-fixed -I/usr/include ../New_A_2_Gui/login.h -o moc_login.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_account_management.h
+compiler_uic_make_all: ui_account_management.h ui_login.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_account_management.h
+	-$(DEL_FILE) ui_account_management.h ui_login.h
 ui_account_management.h: ../New_A_2_Gui/account_management.ui \
 		/usr/bin/uic
 	/usr/bin/uic ../New_A_2_Gui/account_management.ui -o ui_account_management.h
+
+ui_login.h: ../New_A_2_Gui/login.ui \
+		/usr/bin/uic
+	/usr/bin/uic ../New_A_2_Gui/login.ui -o ui_login.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -509,10 +526,14 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-main.o: ../New_A_2_Gui/main.cpp ../New_A_2_Gui/account_management.h
+main.o: ../New_A_2_Gui/main.cpp ../New_A_2_Gui/account_management.h \
+		../New_A_2_Gui/include/Account.h \
+		../New_A_2_Gui/include/UsrInfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../New_A_2_Gui/main.cpp
 
 account_management.o: ../New_A_2_Gui/account_management.cpp ../New_A_2_Gui/account_management.h \
+		../New_A_2_Gui/include/Account.h \
+		../New_A_2_Gui/include/UsrInfo.h \
 		ui_account_management.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o account_management.o ../New_A_2_Gui/account_management.cpp
 
@@ -524,8 +545,17 @@ Account.o: ../New_A_2_Gui/src/Account.cpp ../New_A_2_Gui/include/Account.h \
 		../New_A_2_Gui/include/UsrInfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Account.o ../New_A_2_Gui/src/Account.cpp
 
+login.o: ../New_A_2_Gui/login.cpp ../New_A_2_Gui/login.h \
+		ui_login.h \
+		../New_A_2_Gui/include/Account.h \
+		../New_A_2_Gui/include/UsrInfo.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o login.o ../New_A_2_Gui/login.cpp
+
 moc_account_management.o: moc_account_management.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_account_management.o moc_account_management.cpp
+
+moc_login.o: moc_login.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_login.o moc_login.cpp
 
 ####### Install
 
