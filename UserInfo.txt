@@ -1,10 +1,5 @@
 ***** 1 *****
-1	2	3	
-huy duc nguyen	sadfdsf
+1	
+huy duc nguyen	TOAA
 1-1-2000
-jdls;af	jldsafl;
-***** 2 *****
-
-nguyen dc huy	dfsafdsfsd
-1-1-2000
-kldsajfl;dsa	dsafsadfsd
+1652240	ndhuylord@gmail.com
