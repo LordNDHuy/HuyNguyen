@@ -28,27 +28,25 @@ SOURCES += \
         account_management.cpp \
         UsrInfo.cpp \
         Account.cpp \
-        login.cpp \
-        book_search.cpp \
+    login.cpp \
+    book_search.cpp \
         Book.cpp \
-        edit_book.cpp \
-        user_page.cpp \
-        Request.cpp
+    edit_book.cpp \
+    user_page.cpp
 
 HEADERS += \
         account_management.h \
         Account.h \
         UsrInfo.h \
-        login.h \
-        book_search.h \
+    login.h \
+    book_search.h \
         Book.h \
-        edit_book.h \
-        user_page.h \
-        Request.h
+    edit_book.h \
+    user_page.h
 
 FORMS += \
         account_management.ui \
-        login.ui \
-        book_search.ui \
-        edit_book.ui \
-        user_page.ui
+    login.ui \
+    book_search.ui \
+    edit_book.ui \
+    user_page.ui

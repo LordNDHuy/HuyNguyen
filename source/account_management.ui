@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>648</width>
+    <width>767</width>
     <height>485</height>
    </rect>
   </property>
@@ -18,8 +18,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
-      <width>601</width>
+      <y>30</y>
+      <width>751</width>
       <height>391</height>
      </rect>
     </property>
@@ -33,10 +33,10 @@
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>40</y>
-        <width>341</width>
-        <height>221</height>
+        <x>140</x>
+        <y>50</y>
+        <width>501</width>
+        <height>211</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
@@ -99,8 +99,8 @@
      <widget class="QPushButton" name="Register">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>280</y>
+        <x>350</x>
+        <y>290</y>
         <width>80</width>
         <height>23</height>
        </rect>
@@ -175,7 +175,7 @@
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>290</x>
         <y>60</y>
         <width>57</width>
         <height>23</height>
@@ -188,7 +188,7 @@
      <widget class="QLineEdit" name="user">
       <property name="geometry">
        <rect>
-        <x>373</x>
+        <x>353</x>
         <y>60</y>
         <width>186</width>
         <height>23</height>
@@ -200,8 +200,8 @@
        <rect>
         <x>280</x>
         <y>80</y>
-        <width>301</width>
-        <height>221</height>
+        <width>251</width>
+        <height>231</height>
        </rect>
       </property>
       <property name="title">
@@ -210,8 +210,8 @@
       <widget class="QPushButton" name="remove">
        <property name="geometry">
         <rect>
-         <x>90</x>
-         <y>191</y>
+         <x>70</x>
+         <y>200</y>
          <width>121</width>
          <height>21</height>
         </rect>
@@ -234,7 +234,7 @@
         <rect>
          <x>28</x>
          <y>35</y>
-         <width>251</width>
+         <width>191</width>
          <height>141</height>
         </rect>
        </property>
@@ -258,7 +258,7 @@
          <x>30</x>
          <y>20</y>
          <width>251</width>
-         <height>162</height>
+         <height>161</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_2">
@@ -332,9 +332,9 @@
      <widget class="QPushButton" name="Remove_u">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>150</y>
-        <width>211</width>
+        <x>380</x>
+        <y>140</y>
+        <width>161</width>
         <height>23</height>
        </rect>
       </property>
@@ -345,25 +345,407 @@
        </font>
       </property>
       <property name="text">
-       <string>Remove User</string>
+       <string>Remove_u</string>
       </property>
       <property name="flat">
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QGroupBox" name="pass_ed">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>300</y>
+        <width>211</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>57</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Account</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="new_p">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>110</y>
+         <width>131</width>
+         <height>23</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="Account_edit">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>30</y>
+         <width>131</width>
+         <height>23</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="old_p">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>70</y>
+         <width>131</width>
+         <height>23</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>57</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>New Pass</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>57</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Old Pass</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="change_pas">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>140</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>DejaVu Sans</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Edit</string>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="reset_box">
+      <property name="geometry">
+       <rect>
+        <x>539</x>
+        <y>120</y>
+        <width>211</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>70</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Reset Pass</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="reset_pwd">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>27</y>
+         <width>161</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>DejaVu Sans</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="reset_pw_box">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>67</y>
+         <width>113</width>
+         <height>23</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Page</string>
+     </attribute>
+     <widget class="QGroupBox" name="pass_ed_user">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>30</y>
+        <width>321</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="new_p_user"/>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>Account</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="Account_edit_user"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Old Pass</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="old_p_user"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>New Pass</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="edit_user_pass">
+         <property name="font">
+          <font>
+           <family>DejaVu Sans</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Edit</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="user_userp">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>60</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>User</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="user_name_up">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>60</y>
+        <width>171</width>
+        <height>23</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="account_up">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>260</y>
+        <width>171</width>
+        <height>23</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="user_userp_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>260</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Account</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="user_mail_up">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>140</y>
+        <width>171</width>
+        <height>23</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="user_userp_3">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>140</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Email</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="user_pro_up">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>180</y>
+        <width>171</width>
+        <height>23</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="user_userp_4">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>180</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Profession</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="user_userp_5">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>220</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dob</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="statusbox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>260</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="dateEdit_up">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>220</y>
+        <width>110</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="user_userp_6">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>100</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="user_id_up">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>100</y>
+        <width>171</width>
+        <height>23</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
    </widget>
-   <widget class="QLabel" name="statusbox">
+   <widget class="QPushButton" name="back">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>220</y>
-      <width>111</width>
-      <height>21</height>
+      <x>10</x>
+      <y>0</y>
+      <width>80</width>
+      <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>Back</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -372,7 +754,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>648</width>
+     <width>767</width>
      <height>20</height>
     </rect>
    </property>
@@ -409,7 +791,6 @@
   <tabstop>dateEdit</tabstop>
   <tabstop>occu</tabstop>
   <tabstop>Register</tabstop>
-  <tabstop>Remove_u</tabstop>
  </tabstops>
  <resources/>
  <connections/>

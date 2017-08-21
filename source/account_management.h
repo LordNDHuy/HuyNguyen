@@ -3,9 +3,13 @@
 
 #include <QMainWindow>
 
-#include "include/Account.h"
-#include "include/UsrInfo.h"
+#include "Account.h"
+#include "UsrInfo.h"
 #include <QString>
+
+
+#include "login.h"
+
 typedef struct{
     QStringList User_name;
     std::vector<unsigned int> Uid;
@@ -27,6 +31,7 @@ public:
     ~Account_management();
     void get_username();
     void update_remove();
+    void receive(UsersMgr,AccountsMgr,Account);
 private slots:
     void on_option_currentIndexChanged(int index);
     void on_Register_clicked();
@@ -44,12 +49,27 @@ private slots:
     void get_UID(unsigned int&);
     void on_Remove_u_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_change_pas_clicked();
+
+    void on_edit_user_pass_clicked();
+
+    void on_acc_list_currentTextChanged(const QString &currentText);
+
+    void on_back_clicked();
+
+    void on_reset_pwd_clicked();
+
 private:
     Ui::Account_management *ui;
     UsersMgr user;
     AccountsMgr account;
+    Account login_acc;
     QS_user *search_list = new QS_user();
     std::vector<QS_acc> remove_list;
+    //
+    QString current_acc_list_item;
 };
 
 #endif // ACCOUNT_MANAGEMENT_H
