@@ -72,9 +72,6 @@ public:
     void setState(bool state);
     void setRole(unsigned int roleID);
     void setRole(RoleID role);
-    // Changing password function
-    // Tt belongs to the account itself
-    int changePassword(std::string old_password, std::string new_password);
 };
 
 class AccountsMgr{
@@ -93,6 +90,8 @@ public:
     int createNew(std::string accname, std::string password, RoleID role, unsigned int userID);
     std::string reset(Account account);
     int verify(std::string accname, std::string password) const;
+    // Changing password function
+    int changePassword(unsigned int accountID, std::string oldpassword, std::string newpassword);
     void changeState(unsigned int accountID, bool state);
     void delAccount(unsigned int userID, unsigned int accountID);
     // Password encryption method
