@@ -2,7 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include <iostream>
+
 #include "../include/Account.h"
 #include "../include/UsrInfo.h"
 
@@ -122,7 +122,6 @@ void UsersMgr::saveList() const{
         file_out << user.name << "\t" << user.occupation << "\n";
         file_out << user.DoB.date << "-" << user.DoB.month << "-" << user.DoB.year << "\n";
         file_out << user.id << "\t" << user.email << "\n";
-
     }
 }
 // Get user list function

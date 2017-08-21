@@ -82,17 +82,6 @@ void Account::setRole(unsigned int roleID){
     (this -> role).setLibra(bits[1]);
     (this -> role).setSysadmin(bits[2]);
 }
-// Change password function
-int Account::changePassword(std::string old_password, std::string new_password){
-    std::string old_combination = (this -> accountName) + old_password;
-    std::string old_hash = AccountsMgr::xorCiphing(old_combination);
-    if (old_hash != (this -> hashed_pwd)){
-        return INVALID_PWD;
-    }
-    std::string new_combination = (this -> accountName) + new_password;
-    (this -> hashed_pwd) = AccountsMgr::xorCiphing(new_combination);
-    return SUCCESS;
-}
 
 // Account management system
 // --------------------------------
@@ -196,7 +185,7 @@ std::vector<Account> AccountsMgr::getList(User user) const{
             }
         }
     }
-
+    
     return returnList;
 }
 std::vector<Account> AccountsMgr::getList(unsigned int userID) const{
@@ -215,7 +204,7 @@ std::vector<Account> AccountsMgr::getList(unsigned int userID) const{
             }
         }
     }
-
+    
     return returnList;
 }
 
@@ -325,4 +314,23 @@ void AccountsMgr::delAccount(unsigned int userID, unsigned int accountID){
 char rand_char(){
     int stringlen = sizeof(alphanum) - 1;
     return alphanum[rand() % stringlen];
+}
+// Change password function
+int AccountsMgr::changePassword(unsigned int accountID, std::string oldpassword, std::string newpassword){
+    for (unsigned int i = 0; i < (this -> List).size(); i++){
+        if (accountID == (this -> List)[i].getAID()){
+            std::string old_combination = (this -> List)[i].getName() + oldpassword;
+            std::string old_hash = AccountsMgr::xorCiphing(old_combination);
+            if (old_hash == (this -> List)[i].getHash()){
+                std::string new_combination = (this -> List)[i].getName() + newpassword;
+                (this -> List)[i].setHash(AccountsMgr::xorCiphing(new_combination));
+                return SUCCESS;
+            }
+            else{
+                return INVALID_PWD;
+            }
+        }
+    }
+    // Just in case
+    return INVALID_AID;
 }
